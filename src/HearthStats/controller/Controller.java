@@ -88,7 +88,7 @@ public class Controller implements Initializable{
         //ustawienie TableView
         colKlasa.setCellValueFactory(new PropertyValueFactory<ArenaAbs, String>("klasa"));
         colWygrane.setCellValueFactory(new PropertyValueFactory<ArenaAbs, Integer>("wygrane"));
-        setStudentsArray();
+        setArenasArray();
         setPakiety("Klasyczne");
 
         btnDodaj.disableProperty().bind(Bindings.isEmpty(etWygrane.textProperty()));
@@ -102,7 +102,7 @@ public class Controller implements Initializable{
 
 
 
-    private void setStudentsArray() {
+    private void setArenasArray() {
         arenaAbsList = areny.wyswietl_areny();
         int suma=0;
         int ilosc=0;
@@ -253,7 +253,7 @@ public class Controller implements Initializable{
             JOptionPane.showMessageDialog(null, "Prosze wypelnic wszystkie pola");
             return;
         }
-        setStudentsArray();
+        setArenasArray();
         btnUsun.setDisable(true);
         //initialize(null, null);
     }
@@ -268,7 +268,7 @@ public class Controller implements Initializable{
             areny.usun_arene(arenaAbsDoUsuniecia);
         }
 
-        setStudentsArray();
+        setArenasArray();
         final int newSelectedIdx = (selectedIdx == tableAreny.getItems().size()) ? selectedIdx - 1 : selectedIdx;
         tableAreny.getSelectionModel().select(newSelectedIdx);
     }
