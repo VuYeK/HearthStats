@@ -1,0 +1,22 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="HearthStats">
+    <output-path>$PROJECT_DIR$/out/artifacts/HearthStats</output-path>
+    <properties id="javafx-properties">
+      <options>
+        <option name="appClass" value="HearthStats.view.MainApp" />
+        <option name="description" value="Aplikacja do prowadzenia statystyk gry HearthStone." />
+        <option name="htmlParamFile" value="" />
+        <option name="nativeBundle" value="all" />
+        <option name="paramFile" value="" />
+        <option name="title" value="HearthStats" />
+        <option name="vendor" value="" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="archive" name="HearthStats.jar">
+        <element id="module-output" name="HearthStats" />
+      </element>
+      <element id="library" level="project" name="SQLite-JDBC" />
+    </root>
+  </artifact>
+</component>

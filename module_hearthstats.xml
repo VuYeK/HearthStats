@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_hearthstats" default="compile.module.hearthstats">
+  <dirname property="module.hearthstats.basedir" file="${ant.file.module_hearthstats}"/>
+  
+  <property name="module.jdk.home.hearthstats" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.hearthstats" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.hearthstats" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.hearthstats" value="-encoding UTF-8 -source 8 -target 1.8 ${compiler.args}"/>
+  
+  <property name="hearthstats.output.dir" value="${module.hearthstats.basedir}/out/production/HearthStats"/>
+  <property name="hearthstats.testoutput.dir" value="${module.hearthstats.basedir}/out/test/HearthStats"/>
+  
+  <path id="hearthstats.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="hearthstats.module.production.classpath">
+    <path refid="${module.jdk.classpath.hearthstats}"/>
+    <path refid="library.sqlite-jdbc.classpath"/>
+  </path>
+  
+  <path id="hearthstats.runtime.production.module.classpath">
+    <pathelement location="${hearthstats.output.dir}"/>
+    <path refid="library.sqlite-jdbc.classpath"/>
+  </path>
+  
+  <path id="hearthstats.module.classpath">
+    <path refid="${module.jdk.classpath.hearthstats}"/>
+    <pathelement location="${hearthstats.output.dir}"/>
+    <path refid="library.sqlite-jdbc.classpath"/>
+  </path>
+  
+  <path id="hearthstats.runtime.module.classpath">
+    <pathelement location="${hearthstats.testoutput.dir}"/>
+    <pathelement location="${hearthstats.output.dir}"/>
+    <path refid="library.sqlite-jdbc.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.hearthstats">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.hearthstats">
+    <patternset refid="excluded.from.module.hearthstats"/>
+  </patternset>
+  
+  <path id="hearthstats.module.sourcepath">
+    <dirset dir="${module.hearthstats.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.hearthstats" depends="compile.module.hearthstats.production,compile.module.hearthstats.tests" description="Compile module HearthStats"/>
+  
+  <target name="compile.module.hearthstats.production" depends="register.custom.compilers" description="Compile module HearthStats; production classes">
+    <mkdir dir="${hearthstats.output.dir}"/>
+    <javac2 destdir="${hearthstats.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.hearthstats}/javac">
+      <compilerarg line="${compiler.args.hearthstats}"/>
+      <bootclasspath refid="hearthstats.module.bootclasspath"/>
+      <classpath refid="hearthstats.module.production.classpath"/>
+      <src refid="hearthstats.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.hearthstats"/>
+    </javac2>
+    
+    <copy todir="${hearthstats.output.dir}">
+      <fileset dir="${module.hearthstats.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.hearthstats.tests" depends="register.custom.compilers,compile.module.hearthstats.production" description="compile module HearthStats; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.hearthstats" description="cleanup module">
+    <delete dir="${hearthstats.output.dir}"/>
+    <delete dir="${hearthstats.testoutput.dir}"/>
+  </target>
+</project>
