@@ -22,7 +22,7 @@ public class Pakiety {
 
 
     private static volatile Pakiety instance = null;
-    public int[] tablica = new int[3];
+    public int[] tablica = new int[5];
 
     //Singleton ktory tworzy tylko 1 instancje klasy na wszystkich watkach(synchronized)
     public static Pakiety getInstance() {

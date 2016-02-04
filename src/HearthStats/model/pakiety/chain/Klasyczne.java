@@ -37,7 +37,7 @@ public class Klasyczne extends Obsluga {
     public void wyswietl_pakiety(Pakiety pakiety) {
 
         ResultSet result = null;
-        int[] tablica = new int[3];
+        int[] tablica = new int[5];
         try {
             ConnectDB.getInstance().prepareStmt = ConnectDB.getInstance().polaczenie.prepareStatement("SELECT * FROM pakiety WHERE rodzaj = '"+DODATEK+"'");
             result = ConnectDB.getInstance().prepareStmt.executeQuery();
@@ -48,6 +48,16 @@ public class Klasyczne extends Obsluga {
                 tablica[2] = result.getInt("epik");
             }
             //return tablica;
+
+            ConnectDB.getInstance().prepareStmt = ConnectDB.getInstance().polaczenie.prepareStatement("SELECT * FROM statPakiety WHERE dodatek = '"+DODATEK+"'");
+            result = ConnectDB.getInstance().prepareStmt.executeQuery();
+
+            for(int i=0; result.next(); i++) {
+                tablica[3] = result.getInt("liczbaLegend");
+                tablica[4] = result.getInt("liczbaEpikow");
+            }
+
+
             pakiety.tablica = tablica;
 
 
@@ -64,6 +74,8 @@ public class Klasyczne extends Obsluga {
         try {
             ConnectDB.getInstance().prepareStmt = ConnectDB.getInstance().polaczenie.prepareStatement("UPDATE pakiety SET ilosc=0 WHERE rodzaj = '"+DODATEK+"'");
             ConnectDB.getInstance().prepareStmt.execute();
+            ConnectDB.getInstance().prepareStmt = ConnectDB.getInstance().polaczenie.prepareStatement("UPDATE statPakiety SET liczbaLegend=0, liczbaEpikow=0 WHERE dodatek = '"+DODATEK+"'");
+            ConnectDB.getInstance().prepareStmt.execute();
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, e);
             e.printStackTrace();
@@ -75,6 +87,8 @@ public class Klasyczne extends Obsluga {
         try {
             ConnectDB.getInstance().prepareStmt = ConnectDB.getInstance().polaczenie.prepareStatement("UPDATE pakiety SET legenda=40 WHERE rodzaj = '"+DODATEK+"'");
             ConnectDB.getInstance().prepareStmt.execute();
+            ConnectDB.getInstance().prepareStmt = ConnectDB.getInstance().polaczenie.prepareStatement("UPDATE statPakiety SET liczbaLegend=liczbaLegend+1 WHERE dodatek = '"+DODATEK+"'");
+            ConnectDB.getInstance().prepareStmt.execute();
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, e);
             e.printStackTrace();
@@ -85,6 +99,8 @@ public class Klasyczne extends Obsluga {
     public void resetuj_epika() {
         try {
             ConnectDB.getInstance().prepareStmt = ConnectDB.getInstance().polaczenie.prepareStatement("UPDATE pakiety SET epik=10 WHERE rodzaj = '"+DODATEK+"'");
+            ConnectDB.getInstance().prepareStmt.execute();
+            ConnectDB.getInstance().prepareStmt = ConnectDB.getInstance().polaczenie.prepareStatement("UPDATE statPakiety SET liczbaEpikow=liczbaEpikow+1 WHERE dodatek = '"+DODATEK+"'");
             ConnectDB.getInstance().prepareStmt.execute();
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, e);

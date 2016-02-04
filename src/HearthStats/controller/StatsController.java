@@ -49,7 +49,7 @@ public class StatsController implements Initializable {
         barChartMod = new BarChartModel(barChart, barChartAxisX);
 
         generateKlasy();
-        setStudentsArray();
+        setKlasyArray();
         collectionOfKlasy.attachToAll(barChartMod);
         collectionOfKlasy.attachToAll(pieChartMod);
         collectionOfKlasy.notifyAllObservers(klasy);
@@ -58,7 +58,7 @@ public class StatsController implements Initializable {
 
 
 
-    private void setStudentsArray() {
+    private void setKlasyArray() {
         klasy = FXCollections.observableArrayList(klasaList);
         //ID_TABLE_VIEW.setItems(students);
     }

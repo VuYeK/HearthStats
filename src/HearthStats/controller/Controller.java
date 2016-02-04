@@ -50,7 +50,7 @@ public class Controller implements Initializable{
     @FXML private TableView<ArenaAbs> tableAreny;
     @FXML private TableColumn<ArenaAbs,String> colKlasa;
     @FXML private TableColumn<ArenaAbs,Integer> colWygrane;
-    @FXML private Text txtSrednia, txtPakiety, txtLegenda, txtEpik, txtCaptcha;
+    @FXML private Text txtSrednia, txtPakiety, txtLegenda, txtEpik, txtCaptcha, txtIloscLegenda, txtIloscEpik;
     @FXML private ChoiceBox<String> choiceKlasa, choicePakiety;
 
     @Override
@@ -150,6 +150,9 @@ public class Controller implements Initializable{
         if(pakieciki[1]==0) resetujLegende();
         txtEpik.setText(String.valueOf(pakieciki[2]));
         if(pakieciki[2]==0) resetujEpika();
+
+        txtIloscLegenda.setText(String.valueOf(pakieciki[3]));
+        txtIloscEpik.setText(String.valueOf(pakieciki[4]));
     }
 
 
@@ -162,9 +165,9 @@ public class Controller implements Initializable{
 
     @FXML protected void resetujPakiety()
     {
-        chainOfObsluga.obsluz(choicePakiety.getValue(), "resetPakiety", pakiety);
         chainOfObsluga.obsluz(choicePakiety.getValue(), "resetLegenda", pakiety);
         chainOfObsluga.obsluz(choicePakiety.getValue(), "resetEpik", pakiety);
+        chainOfObsluga.obsluz(choicePakiety.getValue(), "resetPakiety", pakiety);
         setPakiety(choicePakiety.getValue());
     }
 
