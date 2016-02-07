@@ -46,9 +46,18 @@
             </TableView>
             <TextField fx:id="etWygrane" layoutX="148.0" layoutY="436.0" prefHeight="25.0" prefWidth="63.0" promptText="ilość" />
             <ChoiceBox fx:id="choiceKlasa" layoutX="93.0" layoutY="468.0" prefHeight="25.0" prefWidth="118.0" />
-            <Button fx:id="btnDodaj" layoutX="22.0" layoutY="507.0" mnemonicParsing="false" onMouseClicked="#dodaj_arene_do_bazy" prefHeight="25.0" prefWidth="190.0" styleClass="button1" text="DODAJ WYNIK ARENY" />
-            <Button fx:id="btnUsun" layoutX="22.0" layoutY="543.0" mnemonicParsing="false" onMouseClicked="#usun_arene_z_bazy" prefHeight="25.0" prefWidth="190.0" styleClass="button1" text="USUŃ ZAZNACZONĄ ARENE" />
-            <Button fx:id="btnStaty" layoutX="22.0" layoutY="576.0" mnemonicParsing="false" onMouseClicked="#pokazStatystyki" prefHeight="25.0" prefWidth="190.0" styleClass="button1" text="POKAŻ STATYSTYKI" />
+            <Button fx:id="btnDodaj" layoutX="22.0" layoutY="507.0" mnemonicParsing="false" onMouseClicked="#dodaj_arene_do_bazy" prefHeight="25.0" prefWidth="190.0" styleClass="button1" text="DODAJ WYNIK ARENY">
+               <font>
+                  <Font name="Comic Sans MS" size="12.0" />
+               </font></Button>
+            <Button fx:id="btnUsun" layoutX="22.0" layoutY="543.0" mnemonicParsing="false" onMouseClicked="#usun_arene_z_bazy" prefHeight="25.0" prefWidth="190.0" styleClass="button1" text="USUŃ ZAZNACZONĄ ARENE">
+               <font>
+                  <Font name="Comic Sans MS" size="11.0" />
+               </font></Button>
+            <Button fx:id="btnStaty" layoutX="22.0" layoutY="576.0" mnemonicParsing="false" onMouseClicked="#pokazStatystyki" prefHeight="25.0" prefWidth="190.0" styleClass="button1" text="POKAŻ STATYSTYKI">
+               <font>
+                  <Font name="Comic Sans MS" size="12.0" />
+               </font></Button>
             <Label layoutX="262.0" layoutY="111.0" prefHeight="37.0" prefWidth="155.0" text="P A K I E T Y" textFill="WHITE">
                <font>
                   <Font name="8th Cargo" size="33.0" />
@@ -103,12 +112,21 @@
             </Text>
             <Button fx:id="btnDodajPakiet" layoutX="243.0" layoutY="339.0" mnemonicParsing="false" onMouseClicked="#dodaj_pakiet_do_bazy" prefHeight="40.0" prefWidth="190.0" styleClass="button1" text="DODAJ PAKIET">
                <font>
-                  <Font name="System Bold" size="15.0" />
+                  <Font name="Comic Sans MS Bold Italic" size="15.0" />
                </font>
             </Button>
-            <Button fx:id="btnResetPakiety" layoutX="243.0" layoutY="390.0" mnemonicParsing="false" onMouseClicked="#resetujPakiety" prefHeight="25.0" prefWidth="190.0" styleClass="button1" text="RESETUJ PAKIETY" />
-            <Button fx:id="btnResetLeg" layoutX="243.0" layoutY="415.0" mnemonicParsing="false" onMouseClicked="#resetujLegende" prefHeight="25.0" prefWidth="190.0" styleClass="button1" text="RESETUJ LEGENDE" />
-            <Button fx:id="btnResetEpik" layoutX="243.0" layoutY="439.0" mnemonicParsing="false" onMouseClicked="#resetujEpika" prefHeight="25.0" prefWidth="190.0" styleClass="button1" text="RESETUJ EPIKA" />
+            <Button fx:id="btnResetPakiety" layoutX="243.0" layoutY="390.0" mnemonicParsing="false" onMouseClicked="#resetujPakiety" prefHeight="25.0" prefWidth="190.0" styleClass="button1" text="RESETUJ PAKIETY">
+               <font>
+                  <Font name="Comic Sans MS Italic" size="12.0" />
+               </font></Button>
+            <Button fx:id="btnResetLeg" layoutX="243.0" layoutY="415.0" mnemonicParsing="false" onMouseClicked="#resetujLegende" prefHeight="25.0" prefWidth="190.0" styleClass="button1" text="RESETUJ LEGENDE">
+               <font>
+                  <Font name="Comic Sans MS Italic" size="12.0" />
+               </font></Button>
+            <Button fx:id="btnResetEpik" layoutX="243.0" layoutY="439.0" mnemonicParsing="false" onMouseClicked="#resetujEpika" prefHeight="25.0" prefWidth="190.0" styleClass="button1" text="RESETUJ EPIKA">
+               <font>
+                  <Font name="Comic Sans MS Italic" size="12.0" />
+               </font></Button>
             <Label layoutX="262.0" layoutY="527.0" prefHeight="24.0" prefWidth="88.0" text="Captcha:" textFill="WHITE">
                <font>
                   <Font name="HoboStd" size="20.0" />
@@ -138,7 +156,10 @@
                </fill>
             </Text>
             <TextField fx:id="etCaptcha" layoutX="262.0" layoutY="560.0" prefHeight="25.0" prefWidth="88.0" promptText="przepisz kod" />
-            <Button fx:id="btnCaptchaOK" layoutX="360.0" layoutY="562.0" mnemonicParsing="false" onMouseClicked="#sprawdz_captche" prefHeight="25.0" prefWidth="50.0" styleClass="button1" text="OK" />
+            <Button fx:id="btnCaptchaOK" layoutX="360.0" layoutY="562.0" mnemonicParsing="false" onMouseClicked="#sprawdz_captche" prefHeight="25.0" prefWidth="50.0" styleClass="button1" text="OK">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="12.0" />
+               </font></Button>
             <Label layoutX="312.0" layoutY="605.0" text="v0.5 ©Copyright VuYeK™" textFill="#a19d9d">
                <font>
                   <Font name="System Italic" size="12.0" />
