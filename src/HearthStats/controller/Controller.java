@@ -7,6 +7,7 @@ import HearthStats.model.Captcha;
 import HearthStats.model.pakiety.Pakiety;
 import HearthStats.model.pakiety.chain.Obsluga;
 import HearthStats.view.MainApp;
+import javafx.application.Platform;
 import javafx.beans.binding.Bindings;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -137,6 +138,11 @@ public class Controller implements Initializable{
         btnResetPakiety.setDisable(stan);
         btnResetLeg.setDisable(stan);
         btnResetEpik.setDisable(stan);
+    }
+
+
+    @FXML protected void zamknij(){
+        Platform.exit();
     }
 
 

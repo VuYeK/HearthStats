@@ -1,0 +1,169 @@
+/*.background
+{
+    -fx-background-image: url("bg_frame.png");
+    -fx-background-color: transparent;
+    -fx-background-repeat: stretch;
+    -fx-background-size: 459 637;
+    -fx-background-position: center center;
+    /*-fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0);
+}*/
+
+
+.root
+{
+    -fx-focus-color: #a96000;
+    -fx-accent: #a96000;
+}
+
+.hearthstats
+{
+
+}
+
+.hearthstats:hover
+{
+
+}
+
+.background1
+{
+    -fx-background-color: rgba(255, 255, 255, 0.0);
+    -fx-background-image: url("bg_frame2.png");
+    -fx-background-position: center center;
+    -fx-background-repeat: stretch;
+    -fx-background-size: 535 710;
+    -fx-opacity: 0.96;
+}
+
+
+.label1
+{
+    -fx-fill: green;
+    -fx-stroke: black;
+    -fx-stroke-width: 8px;
+}
+
+.button1
+{
+    -fx-background-image: url("button1.png");
+    /*-fx-graphic: url("button2.png");*/
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 100% 100%;
+    -fx-background-color: transparent;
+    -fx-background-radius: 20px;
+}
+
+.button1:hover
+{
+    -fx-background-image: url("buttonClick.png");
+    /*-fx-graphic: url("button2.png");*/
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 100% 100%;
+    -fx-background-color: transparent;
+    -fx-background-radius: 20px;
+}
+
+.btnClose
+{
+    -fx-background-image: url("btnclose.png");
+    /*-fx-graphic: url("button2.png");*/
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 100% 100%;
+    -fx-background-color: transparent;
+    -fx-background-radius: 20px;
+    -fx-opacity: 0.7;
+}
+
+.btnClose:hover
+{
+    -fx-opacity: 1.0;
+}
+
+.table-view {
+    -fx-base: #f39148; /*Suwaki itp*/
+    -fx-control-inner-background: transparent; /*Kolor wewnątrz tabeli*/
+    -fx-background-color: rgba(139, 69, 19, 0.41); /* Kolor tła */
+    -fx-table-cell-border-color: transparent;
+    -fx-table-header-border-color: transparent;
+    -fx-padding: 0;
+
+    -fx-border-width: 1px;
+    -fx-border-color: rgba(194, 194, 194, 0.44);
+}
+
+.table-view .column-header-background {
+    -fx-background-color: transparent; /* Kolor tła tytułu kolumn */
+}
+
+.table-view .column-header, .table-view .filler {
+    -fx-size: 25px;
+    -fx-border-width: 0 0 1 0;
+    -fx-background-color: transparent;
+    -fx-border-color:
+            transparent
+            transparent
+            darkgray
+            transparent;
+    -fx-border-insets: 0 5 2 5;
+}
+
+
+.table-view .column-header .label {
+    -fx-font-size: 13pt;
+    -fx-font-family: "Segoe UI Light";
+    -fx-text-fill: white;
+    -fx-alignment: center;
+    -fx-opacity: 1;
+}
+
+.table-row-cell
+{
+    -fx-alignment: center;
+}
+
+
+.table-view:focused .table-row-cell:filled:focused:selected {
+    -fx-background-color: -fx-focus-color;
+
+}
+
+
+
+.text-field {
+    -fx-background-color: rgba(139, 69, 19, 0.8);
+    -fx-border-width: 1px;
+    -fx-border-color: rgba(194, 194, 194, 0.44);
+    -fx-border-radius: 5px;
+}
+
+.text-field:focused {
+    -fx-background-color: rgba(139, 69, 19, 0.8);
+    -fx-border-width: 1px;
+    -fx-border-color: rgba(194, 194, 194, 0.85);
+    -fx-border-radius: 5px;
+    -fx-text-fill: #d5d5d5;
+}
+
+
+.choice-box
+{
+    -fx-background-color:
+            #4b2300,
+            linear-gradient(#eab022, #8f570e),
+            linear-gradient(#b7742f, #753e1e),
+            linear-gradient(#b7742f, #753e1e);
+
+}
+
+.choice-box .label
+{
+    -fx-text-fill: white;
+}
+
+.choice-box .context-menu
+{
+    -fx-background-color: rgba(139, 69, 19, 0.8);
+}
