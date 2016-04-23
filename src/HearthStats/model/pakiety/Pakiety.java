@@ -1,10 +1,7 @@
 package HearthStats.model.pakiety;
 
 import HearthStats.base.ConnectDB;
-import HearthStats.model.pakiety.chain.GvG;
-import HearthStats.model.pakiety.chain.Klasyczne;
-import HearthStats.model.pakiety.chain.Obsluga;
-import HearthStats.model.pakiety.chain.TGT;
+import HearthStats.model.pakiety.chain.*;
 
 import javax.swing.*;
 import java.sql.ResultSet;
@@ -49,9 +46,11 @@ public class Pakiety {
         Obsluga klasyczne = new Klasyczne();
         Obsluga gvg = new GvG();
         Obsluga tgt = new TGT();
+        Obsluga oldgods = new OldGods();
 
         klasyczne.setNextObsluge(gvg);
         gvg.setNextObsluge(tgt);
+        tgt.setNextObsluge(oldgods);
 
         return klasyczne;
     }
