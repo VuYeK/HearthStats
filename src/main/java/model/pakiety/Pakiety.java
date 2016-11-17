@@ -10,7 +10,7 @@ import model.pakiety.chain.*;
 public class Pakiety {
 
 
-    //Po��czenie z baz�
+    //Połączenie z bazą
     //public ConnectDB baza = new ConnectDB();
 
 
@@ -43,10 +43,12 @@ public class Pakiety {
         Obsluga gvg = new GvG();
         Obsluga tgt = new TGT();
         Obsluga oldgods = new OldGods();
+        Obsluga gadgetzan = new Gadgetzan();
 
         klasyczne.setNextObsluge(gvg);
         gvg.setNextObsluge(tgt);
         tgt.setNextObsluge(oldgods);
+        oldgods.setNextObsluge(gadgetzan);
 
         return klasyczne;
     }
