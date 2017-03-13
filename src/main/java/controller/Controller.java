@@ -70,7 +70,7 @@ public class Controller implements Initializable{
 
 
         List<String> list2 = new ArrayList<>();
-        list2.add("Klasyczne");list2.add("GvG");list2.add("TGT");list2.add("Old Gods");list2.add("Gadgetzan");
+        list2.add("Klasyczne");list2.add("GvG");list2.add("TGT");list2.add("Old Gods");list2.add("Gadgetzan");list2.add("UnGoro");
         ObservableList obList2 = FXCollections.observableList(list2);
 
         choicePakiety.getItems().clear();

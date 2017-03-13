@@ -44,11 +44,13 @@ public class Pakiety {
         Obsluga tgt = new TGT();
         Obsluga oldgods = new OldGods();
         Obsluga gadgetzan = new Gadgetzan();
+        Obsluga ungoro = new UnGoro();
 
         klasyczne.setNextObsluge(gvg);
         gvg.setNextObsluge(tgt);
         tgt.setNextObsluge(oldgods);
         oldgods.setNextObsluge(gadgetzan);
+        gadgetzan.setNextObsluge(ungoro);
 
         return klasyczne;
     }
