@@ -45,12 +45,14 @@ public class Pakiety {
         Obsluga oldgods = new OldGods();
         Obsluga gadgetzan = new Gadgetzan();
         Obsluga ungoro = new UnGoro();
+        Obsluga frozenthrone = new FrozenThrone();
 
         klasyczne.setNextObsluge(gvg);
         gvg.setNextObsluge(tgt);
         tgt.setNextObsluge(oldgods);
         oldgods.setNextObsluge(gadgetzan);
         gadgetzan.setNextObsluge(ungoro);
+        ungoro.setNextObsluge(frozenthrone);
 
         return klasyczne;
     }
