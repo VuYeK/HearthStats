@@ -160,7 +160,7 @@
                <font>
                   <Font name="Comic Sans MS Bold" size="12.0" />
                </font></Button>
-            <Label layoutX="312.0" layoutY="605.0" text="v0.8 ©Copyright VuYeK™" textFill="#a19d9d">
+            <Label layoutX="312.0" layoutY="605.0" text="v0.9 ©Copyright VuYeK™" textFill="#a19d9d">
                <font>
                   <Font name="System Italic" size="12.0" />
                </font>

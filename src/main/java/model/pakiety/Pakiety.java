@@ -46,6 +46,7 @@ public class Pakiety {
         Obsluga gadgetzan = new Gadgetzan();
         Obsluga ungoro = new UnGoro();
         Obsluga frozenthrone = new FrozenThrone();
+        Obsluga kobolds = new Kobolds();
 
         klasyczne.setNextObsluge(gvg);
         gvg.setNextObsluge(tgt);
@@ -53,6 +54,7 @@ public class Pakiety {
         oldgods.setNextObsluge(gadgetzan);
         gadgetzan.setNextObsluge(ungoro);
         ungoro.setNextObsluge(frozenthrone);
+        frozenthrone.setNextObsluge(kobolds);
 
         return klasyczne;
     }
