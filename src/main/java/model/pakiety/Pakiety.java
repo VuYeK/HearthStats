@@ -48,6 +48,7 @@ public class Pakiety {
         Obsluga frozenthrone = new FrozenThrone();
         Obsluga kobolds = new Kobolds();
         Obsluga witchwood = new WitchWood();
+        Obsluga boomsday = new BoomsdayProject();
 
         klasyczne.setNextObsluge(gvg);
         gvg.setNextObsluge(tgt);
@@ -57,6 +58,7 @@ public class Pakiety {
         ungoro.setNextObsluge(frozenthrone);
         frozenthrone.setNextObsluge(kobolds);
         kobolds.setNextObsluge(witchwood);
+        witchwood.setNextObsluge(boomsday);
 
         return klasyczne;
     }
